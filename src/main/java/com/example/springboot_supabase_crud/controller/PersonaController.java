@@ -31,6 +31,11 @@ public class PersonaController {
         return personaService.createPersona(persona);
     }
 
+    @PutMapping("/{id}")
+    public Persona updatePersona(@PathVariable UUID id, @RequestBody Persona persona) {
+        return personaService.updatePersona(id, persona);
+    }
+
     @DeleteMapping("/{id}")
     public void deletePersona(@PathVariable UUID id) {
         personaService.deletePersona(id);
